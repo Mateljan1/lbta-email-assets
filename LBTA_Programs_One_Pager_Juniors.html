@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LBTA Junior Programs — Spring & Summer 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  --pacific-dusk: #1B3A5C;
+  --victoria-cove: #2E8B8B;
+  --sunset-cliff: #E8834A;
+  --morning-light: #FAF8F4;
+  --salt-air: #FFFFFF;
+  --ink: #1B3A5C;
+  --ink-muted: rgba(27, 58, 92, 0.65);
+  --card-bg: #FFFFFF;
+  --fact-bg: rgba(46, 139, 139, 0.06);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+@page { size: letter; margin: 0.5in; }
+
+html { font-size: 17px; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--pacific-dusk);
+  background: var(--morning-light);
+  -webkit-font-smoothing: antialiased;
+  padding: 0.5in;
+  min-height: 100vh;
+  line-height: 1.4;
+}
+
+.page { max-width: 7.5in; min-height: 10in; margin: 0 auto; }
+
+.header-strip {
+  background: linear-gradient(135deg, var(--pacific-dusk) 0%, #0F2237 100%);
+  margin: -0.5in -0.5in 0;
+  padding: 0.32in 0.5in 0.28in;
+  display: flex;
+  align-items: center;
+  gap: 0.28in;
+  flex-wrap: wrap;
+}
+.header-logo { height: 46px; width: auto; display: block; }
+.header-text { flex: 1; min-width: 260px; }
+.header-title { font-family: 'Cormorant', serif; font-weight: 600; font-size: 1.55rem; line-height: 1.2; color: var(--salt-air); letter-spacing: 0.02em; }
+.header-meta { font-size: 0.85rem; color: rgba(255,255,255,0.82); margin-top: 0.2em; font-style: italic; }
+
+.accent-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--victoria-cove) 0%, var(--sunset-cliff) 50%, #C4963C 100%);
+  margin: 0.22in -0.5in 0.2in -0.5in;
+}
+
+.section { margin-bottom: 0.28in; }
+.section-head {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--victoria-cove);
+  margin-bottom: 0.18in;
+  padding: 0.12in 0.2in;
+  background: var(--fact-bg);
+  border-radius: 6px;
+  border-left: 4px solid var(--victoria-cove);
+}
+
+.program-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.2in 0.24in; }
+.camps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.2in 0.24in; }
+
+.program-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 0.2in 0.22in;
+  border: 1px solid rgba(27, 58, 92, 0.1);
+  box-shadow: 0 2px 12px rgba(27, 58, 92, 0.06);
+  break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  gap: 0.14in;
+}
+
+.card-title {
+  font-family: 'Cormorant', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--pacific-dusk);
+  line-height: 1.3;
+  padding-bottom: 0.08in;
+  border-bottom: 2px solid var(--victoria-cove);
+}
+
+.card-facts { display: flex; flex-direction: column; gap: 0.12in; }
+.fact-line { display: flex; align-items: flex-start; gap: 0.2in; }
+.fact-key {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--victoria-cove);
+  flex-shrink: 0;
+  width: 3.6em;
+  padding-top: 0.02em;
+}
+.fact-val { font-size: 0.9rem; font-weight: 600; color: var(--ink); line-height: 1.45; }
+.fact-val.price { color: var(--victoria-cove); font-weight: 700; }
+.price-lines { display: flex; flex-direction: column; gap: 0.04in; }
+.price-lines .fact-val { font-size: 0.86rem; }
+
+.card-desc { font-size: 0.8rem; line-height: 1.5; color: var(--ink-muted); margin-top: 0.02in; }
+
+.footer-bar {
+  margin: 0.22in -0.5in -0.5in -0.5in;
+  padding: 0.22in 0.5in;
+  background: rgba(27, 58, 92, 0.06);
+  border-top: 1px solid rgba(27, 58, 92, 0.1);
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  text-align: center;
+}
+.footer-bar a { color: var(--victoria-cove); text-decoration: none; font-weight: 600; }
+
+@media print {
+  body { padding: 0; background: #fff; }
+  .page { max-width: none; min-height: auto; }
+  .header-strip, .accent-bar, .footer-bar { margin-left: 0; margin-right: 0; padding-left: 0.5in; padding-right: 0.5in; }
+  .program-card { box-shadow: none; border: 1px solid rgba(27, 58, 92, 0.12); }
+}
+@media (max-width: 640px) {
+  .program-grid, .camps-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="header-strip">
+    <img src="./logos/LagunaBeachTennisAcademy_FC-STACKED-INV.png" alt="Laguna Beach Tennis Academy" class="header-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+    <span class="header-logo-fallback" style="display:none; font-family: 'Cormorant', serif; font-weight: 600; font-size: 1.2rem; color: var(--salt-air); letter-spacing: 0.08em;">LBTA</span>
+    <div class="header-text">
+      <h1 class="header-title">Junior Programs — Spring & Summer 2026</h1>
+      <p class="header-meta">Tennis, as it should be taught. Movement · Discipline · Belonging.</p>
+    </div>
+  </header>
+
+  <div class="accent-bar" aria-hidden="true"></div>
+
+  <section class="section">
+    <p class="section-head">Player Journey — Discovery to Pathway</p>
+    <div class="program-grid">
+      <div class="program-card">
+        <h2 class="card-title">Little Tennis Stars</h2>
+        <div class="card-facts">
+          <div class="fact-line">
+            <span class="fact-key">When</span>
+            <span class="fact-val">Mon/Wed 3:30–4:15 PM · 45 min · Moulton Meadows · Ages 3–4</span>
+          </div>
+          <div class="fact-line">
+            <span class="fact-key">Price</span>
+            <span class="fact-val price">1x/wk $120/mo · 2x/wk $200/mo · Drop-in $40</span>
+          </div>
+        </div>
+        <p class="card-desc">Foam balls, mini courts, movement games. First step in the LBTA Player Journey.</p>
+      </div>
+      <div class="program-card">
+        <h2 class="card-title">Red Ball Tennis</h2>
+        <div class="card-facts">
+          <div class="fact-line">
+            <span class="fact-key">When</span>
+            <span class="fact-val">Mon/Wed 4:15–5:15 PM · 60 min · Moulton Meadows · Ages 5–6</span>
+          </div>
+          <div class="fact-line">
+            <span class="fact-key">Price</span>
+            <div class="price-lines">
+              <span class="fact-val price">Spring: 1x $420 · 2x $840 · 3x $1,260</span>
+              <span class="fact-val price">Summer: 1x $462 · 2x $924 · 3x $1,386 · Drop-in $50</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Stroke development, footwork, rally building on a 36-foot court. Technical foundation.</p>
+      </div>
+      <div class="program-card">
+        <h2 class="card-title">Orange Ball Tennis</h2>
+        <div class="card-facts">
+          <div class="fact-line">
+            <span class="fact-key">When</span>
+            <span class="fact-val">Mon/Wed · 60 min · Moulton Meadows · Ages 7–8 · Fri Match Play optional</span>
+          </div>
+          <div class="fact-line">
+            <span class="fact-key">Price</span>
+            <div class="price-lines">
+              <span class="fact-val price">1x $420 · 2x $840 · 3x $1,260</span>
+              <span class="fact-val price">Match Play $65/mo or $25/session · Drop-in $50</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Directional play, consistent rallies, competitive instincts. Foundation stage.</p>
+      </div>
+      <div class="program-card">
+        <h2 class="card-title">Green Dot Tennis</h2>
+        <div class="card-facts">
+          <div class="fact-line">
+            <span class="fact-key">When</span>
+            <span class="fact-val">Mon/Wed · 60 min · Moulton Meadows · Ages 9–11 · Full court · Fri Match Play optional</span>
+          </div>
+          <div class="fact-line">
+            <span class="fact-key">Price</span>
+            <div class="price-lines">
+              <span class="fact-val price">1x $420 · 2x $840 · 3x $1,260</span>
+              <span class="fact-val price">Match Play $65/mo or $25/session · Drop-in $50</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Full-court consistency, tactical awareness, competitive mindset. Critical development window.</p>
+      </div>
+      <div class="program-card">
+        <h2 class="card-title">Youth Development</h2>
+        <div class="card-facts">
+          <div class="fact-line">
+            <span class="fact-key">When</span>
+            <span class="fact-val">Mon–Thu Alta Laguna · Fri Match Play LBHS · 90 min · Ages 11–15</span>
+          </div>
+          <div class="fact-line">
+            <span class="fact-key">Price</span>
+            <div class="price-lines">
+              <span class="fact-val price">Spring: 1x $580 up to 5x $2,500</span>
+              <span class="fact-val price">Summer: 1x $638 up to 5x $2,750 · Drop-in $70</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Tactical depth, physical conditioning, competitive readiness. Train up to 5x/week.</p>
+      </div>
+      <div class="program-card">
+        <h2 class="card-title">High Performance Academy</h2>
+        <div class="card-facts">
+          <div class="fact-line">
+            <span class="fact-key">When</span>
+            <span class="fact-val">Mon–Thu 6–8 PM · Fri 5:30–7:30 PM Match Play · 120 min · LBHS · Ages 12–17 · UTR 5+</span>
+          </div>
+          <div class="fact-line">
+            <span class="fact-key">Price</span>
+            <div class="price-lines">
+              <span class="fact-val price">Spring: 1x $625 up to 5x $2,460</span>
+              <span class="fact-val price">Summer: 1x $688 up to 5x $2,706 · Drop-in $100</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Tournament-caliber training. Advanced technique, tactics, match-play intensity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-head">Camps</p>
+    <div class="camps-grid">
+      <div class="program-card">
+        <h2 class="card-title">Tennis & Games Camp</h2>
+        <div class="card-facts">
+          <div class="fact-line">
+            <span class="fact-key">When</span>
+            <span class="fact-val">Spring Break & Summer · Half day 9 AM–12 or 12–3 · Full day (summer) 9 AM–3 PM · Alta Laguna</span>
+          </div>
+          <div class="fact-line">
+            <span class="fact-key">Price</span>
+            <div class="price-lines">
+              <span class="fact-val price">Half day $295/wk · Full day $495/wk</span>
+              <span class="fact-val price">Multi-week (4+): 10% off · Sibling: 10% off</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">Tennis, games, team activities. Ages 5–11. Half- or full-day options.</p>
+      </div>
+      <div class="program-card">
+        <h2 class="card-title">Junior Development Camp</h2>
+        <div class="card-facts">
+          <div class="fact-line">
+            <span class="fact-key">When</span>
+            <span class="fact-val">Spring Break & Summer · 9 AM–12 PM or 1–4 PM · 3 hr · LBHS</span>
+          </div>
+          <div class="fact-line">
+            <span class="fact-key">Price</span>
+            <span class="fact-val price">$325/wk · Multi-week (4+): 10% off · Sibling: 10% off</span>
+          </div>
+        </div>
+        <p class="card-desc">Three-hour intensive. Technique, tactics, competitive play. Ages 12–17. AM/PM options.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-head">Private & Semi-Private Lessons</p>
+    <div class="program-grid">
+      <div class="program-card">
+        <h2 class="card-title">Private Lessons</h2>
+        <div class="card-facts">
+          <div class="fact-line">
+            <span class="fact-key">When</span>
+            <span class="fact-val">By appointment · 60 or 90 min · Moulton Meadows, Alta Laguna, or LBHS</span>
+          </div>
+          <div class="fact-line">
+            <span class="fact-key">Price</span>
+            <div class="price-lines">
+              <span class="fact-val price">$120–$150/hr (by coach)</span>
+              <span class="fact-val price">10-pack: 8% off · 20-pack: 17% off</span>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">One-on-one for any age and level. Fundamentals, stroke work, tournament prep. LBTA Method.</p>
+      </div>
+      <div class="program-card">
+        <h2 class="card-title">Semi-Private Lessons</h2>
+        <div class="card-facts">
+          <div class="fact-line">
+            <span class="fact-key">When</span>
+            <span class="fact-val">By appointment · 60 or 90 min · All LBTA locations</span>
+          </div>
+          <div class="fact-line">
+            <span class="fact-key">Price</span>
+            <span class="fact-val price">Cost split—contact staff for rates</span>
+          </div>
+        </div>
+        <p class="card-desc">2–3 players, similar level. Live hitting and point-play. Siblings, friends.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-bar">
+    Laguna Beach Tennis Academy · Spring & Summer 2026 · <a href="mailto:support@lagunabeachtennisacademy.com">support@lagunabeachtennisacademy.com</a> · lagunabeachtennisacademy.com
+  </footer>
+</div>
+</body>
+</html>
